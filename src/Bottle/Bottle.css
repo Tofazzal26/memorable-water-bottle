@@ -1,0 +1,43 @@
+.bottleName {
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+}
+.seller {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #767676;
+}
+
+.price {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.review {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.price-review {
+  display: flex;
+  align-items: center;
+  gap: 180px;
+  color: #767676;
+}
+
+.btn {
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding-right: 26px;
+  padding-left: 26px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6ca12b;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
