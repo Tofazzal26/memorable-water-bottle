@@ -1,8 +1,7 @@
 import "./Bottle.css";
 
-const Bottle = ({ bottle }) => {
+const Bottle = ({ bottle, handleSelected }) => {
   const { name, price, img, seller, ratingsCount } = bottle;
-  console.log(bottle);
   return (
     <div>
       <div>
@@ -17,7 +16,9 @@ const Bottle = ({ bottle }) => {
           <p className="price">${price}</p>
           <p className="review">({ratingsCount} review)</p>
         </div>
-        <button className="btn">Purchase</button>
+        <button onClick={() => handleSelected(bottle)} className="btn">
+          Purchase
+        </button>
       </div>
     </div>
   );
