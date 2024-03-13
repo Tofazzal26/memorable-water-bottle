@@ -15,13 +15,6 @@ const Bottles = () => {
       .then((data) => setBottles(data));
   }, []);
 
-  useEffect(() => {
-    if (bottles.length > 0) {
-      const storedCart = cartStorage();
-      console.log(storedCart);
-    }
-  }, [bottles]);
-
   const [selects, setSelects] = useState([]);
 
   const handleSelected = (select) => {
@@ -29,6 +22,23 @@ const Bottles = () => {
     setSelects(newSelect);
     addLocalStorage(select);
   };
+
+  useEffect(() => {
+    if (bottles.length) {
+      const storedCart = cartStorage();
+      // console.log(storedCart);
+      const savedCart = [];
+      for (const id of storedCart) {
+        const findBottle = bottles.find((bottle) => bottle.id === id.id);
+
+        if (findBottle) {
+          savedCart.push(findBottle);
+        }
+      }
+      // console.log(savedCart, bottles);
+      setSelects(savedCart);
+    }
+  }, [bottles]);
 
   return (
     <div>
