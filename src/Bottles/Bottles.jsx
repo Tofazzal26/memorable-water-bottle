@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Bottle from "../Bottle/Bottle";
 import "./Bottles.css";
-import { addLocalStorage, cartStorage } from "../utilities/storage";
+import {
+  addLocalStorage,
+  cartStorage,
+  removeFromLS,
+} from "../utilities/storage";
+import Cart from "../Cart/Cart";
 
 const Bottles = () => {
   const [bottles, setBottles] = useState([]);
@@ -21,6 +26,12 @@ const Bottles = () => {
     const newSelect = [...selects, select];
     setSelects(newSelect);
     addLocalStorage(select);
+  };
+
+  const handleRemove = (id) => {
+    const remainingCart = selects.filter((bottle) => bottle.id !== id);
+    setSelects(remainingCart);
+    removeFromLS(id);
   };
 
   useEffect(() => {
@@ -44,7 +55,7 @@ const Bottles = () => {
     <div>
       <h2 className="header">Memorable-Water-Bottle</h2>
       <h4 className="available">Bottle Available: {bottles.length}</h4>
-      <h4 className="selected">Selected Cart: {selects.length}</h4>
+      <Cart selects={selects} handleRemove={handleRemove} />
       <div className="bottleGrid">
         {bottles.map((bottle) => (
           <Bottle

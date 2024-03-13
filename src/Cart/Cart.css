@@ -1,0 +1,28 @@
+.selected-cart img {
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+.selected-cart {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.bottle-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.remove {
+  color: white;
+  cursor: pointer;
+  background-color: #dc3545;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: none;
+  border-radius: 5px;
+}
